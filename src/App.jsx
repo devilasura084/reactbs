@@ -10,10 +10,7 @@ function App() {
     news()
   },[])
   function news(){
-    axios({
-      method:'get',
-      url:'https://newsapi.org/v2/top-headlines?country=in&apiKey=203e7dca7d104d37935b13702b5cbfed'
-    })
+    axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=203e7dca7d104d37935b13702b5cbfed')
     .then(res=>{
       setreceive(true)
       setvalues(res.data.articles)
